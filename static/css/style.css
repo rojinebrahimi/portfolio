@@ -131,9 +131,7 @@ nav a {
     position: relative;
     transition: all var(--transition-speed);
 }
-nav a:hover {
-    font-weight: bold;
-}
+
 nav a::before {
     content: '';
     position: absolute;
@@ -179,22 +177,26 @@ body.dark .toggle-container button::after {
 }
 
 /* Intro Section */
+/* Ensure the image is above the text */
 .intro {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack the items vertically */
+    justify-content: center; /* Center the items vertically */
+    align-items: center; /* Center the items horizontally */
     margin-bottom: 40px;
     padding: 20px;
+    text-align: center; /* Center the text within the section */
 }
 
 .intro-text {
-    width: 60%; /* Adjusting width to allow more space for text */
+    width: 60%; /* Adjust width of the text */
     font-size: 16px;
     line-height: 1.6;
-    max-width: 600px; /* Limit the width to improve readability */
+    max-width: 600px; /* Limit width to improve readability */
+    padding-top: 20px; /* Add space between the image and the text */
 }
 
+/* Heading and paragraph styling */
 .intro-text h1 {
     font-size: 28px;
     margin-bottom: 15px;
@@ -206,31 +208,34 @@ body.dark .toggle-container button::after {
     color: var(--primary-text-color);
 }
 
-/* Intro Section Image */
+/* Image section style */
 .intro-image {
-    width: 200px; /* Adjust image size */
-    height: 200px; /* Adjust image size */
+    width: 200px; /* Adjust the image size */
+    height: 200px; /* Adjust the image size */
     background-color: var(--secondary-bg-color);
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Initial shadow */
     transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
-  }
-  
-  .intro-image:hover {
+    margin-bottom: 20px; /* Space between the image and the text */
+}
+
+/* Effect on image hover */
+.intro-image:hover {
     box-shadow: 0 0 20px 5px var(--highlight-color); /* Purple glow effect on hover */
-  }
-  
-  .intro-image img {
+}
+
+.intro-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Maintain aspect ratio of the image */
     transition: transform 0.3s ease;
-  }
-  
-  .intro-image:hover img {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-  }  
+}
+
+/* Slight zoom effect on hover */
+.intro-image:hover img {
+    transform: scale(1.05); 
+}
 
 .cta {
     display: inline-block;

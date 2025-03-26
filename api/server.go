@@ -21,7 +21,7 @@ func renderTemplate(w http.ResponseWriter, templateName string, data PageData) {
 
 func home(w http.ResponseWriter, r *http.Request) {
 	data := PageData{
-		Title: "Magic!",
+		Title: "Rojin",
 		Mode:  "",
 	}
 	renderTemplate(w, "index.html", data)
