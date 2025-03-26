@@ -26,6 +26,11 @@ func renderTemplate(w http.ResponseWriter, templateName string, data PageData) {
     }
 }
 
+func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("OK"))
+}
+
 func home(w http.ResponseWriter, r *http.Request) {
 	data := PageData{
 		Title: "Home",
@@ -54,6 +59,7 @@ func Server() {
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 
 	// Serve main pages
+	http.HandleFunc("/healthz", HealthCheckHandler)
 	http.HandleFunc("/", home)
 	http.HandleFunc("/about", about)
 	http.HandleFunc("/skills", skills)
