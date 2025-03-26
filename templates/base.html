@@ -1,0 +1,73 @@
+{{ define "base" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="{{ .Mode }}">
+
+  <!-- DevOps Tools Background (Moving Images) -->
+  <div class="devops-bg">
+    <!-- DevOps tools images -->
+    <img src="/assets/images/kubernetes.png" alt="Kubernetes" class="bg-img bg-img1">
+    <img src="/assets/images/docker.png" alt="Docker" class="bg-img bg-img2">
+    <img src="/assets/images/gitlab.png" alt="GitLab" class="bg-img bg-img3">
+    <img src="/assets/images/ansible.png" alt="Ansible" class="bg-img bg-img4">
+    <img src="/assets/images/golang.png" alt="Golang" class="bg-img bg-img5">
+    <img src="/assets/images/python.png" alt="Python" class="bg-img bg-img6">
+    <img src="/assets/images/argocd.png" alt="ArgoCD" class="bg-img bg-img7">
+    <img src="/assets/images/vault.png" alt="Vault" class="bg-img bg-img8">
+    <img src="/assets/images/consul.png" alt="Consul" class="bg-img bg-img9">
+    <img src="/assets/images/terraform.png" alt="Terraform" class="bg-img bg-img10">
+    <img src="/assets/images/clickhouse.png" alt="ClickHouse" class="bg-img bg-img11">
+    <img src="/assets/images/elk.png" alt="ELK" class="bg-img bg-img12">
+    <img src="/assets/images/prometheus.png" alt="Prometheus" class="bg-img bg-img13">
+    <img src="/assets/images/nginx.png" alt="NGINX" class="bg-img bg-img14">
+    <img src="/assets/images/kafka.png" alt="Kafka" class="bg-img bg-img15">
+    <img src="/assets/images/helm.png" alt="Helm" class="bg-img bg-img16">
+    <img src="/assets/images/sentry.png" alt="Sentry" class="bg-img bg-img17">
+    <img src="/assets/images/openshift.png" alt="OpenShift" class="bg-img bg-img18">
+    <img src="/assets/images/contour.png" alt="Contour" class="bg-img bg-img19">
+    <img src="/assets/images/grafana.png" alt="Grafana" class="bg-img bg-img20">
+    <img src="/assets/images/github-actions.png" alt="GitHub Actions" class="bg-img bg-img21">
+    <img src="/assets/images/haproxy.png" alt="HAProxy" class="bg-img bg-img22">
+  </div>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo"><i class="fas fa-magic"></i></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/skills">Skills</a>
+      </nav>
+    </div>
+    <div class="toggle-container">
+      <button id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    {{ block "content" . }}{{ end }}
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Rojin. Made with <img src="/assets/icons/coffee-cup.png" height="32" width="32"> & <img src="/assets/icons/love-potion.png" height="32" width="32">.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/static/js/dark-mode-toggle.js"></script>
+</body>
+</html>
+{{ end }}
