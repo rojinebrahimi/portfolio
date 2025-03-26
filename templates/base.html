@@ -1,0 +1,40 @@
+{{ define "base" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="{{ .Mode }}">
+  <header class="header">
+    <div class="header-left">
+      <div class="logo"><i class="fas fa-magic"></i></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/skills">Skills</a>
+      </nav>
+    </div>
+    <div class="toggle-container">
+      <button id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    {{ block "content" . }}{{ end }}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rojin. Made with <img src="/assets/icons/coffee-cup.png" height="32" width="32"> & <img src="/assets/icons/love-potion.png" height="32" width="32">.</p>
+  </footer>
+
+  <script src="/static/js/dark-mode-toggle.js"></script>
+</body>
+</html>
+{{ end }}

@@ -1,0 +1,523 @@
+/* Color Palette */
+:root {
+    --primary-bg-color: #fff;
+    --secondary-bg-color: #F5F5F5;
+    --primary-text-color: #333;
+    --highlight-color: #3c0061;
+    --accent-color: #00B8D4;
+    --dark-violet: #1c002f;
+    --light-dark-header: #4a0072;
+    --light-gray: #d3d3d3;
+    --transition-speed: 0.4s;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    position: relative;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--highlight-color);
+}
+
+/* Ensure main content takes enough space so footer stays at bottom */
+main {
+    padding: 80px 20px;
+    text-align: center;
+    min-height: calc(100vh - 150px);
+}
+
+/* DevOps Tools Background */
+.devops-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .devops-bg .bg-img {
+    position: absolute;
+    width: 100px; /* Set a fixed width for all images */
+    height: 100px; /* Set a fixed height for all images */
+    opacity: 0.15;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+    object-fit: contain; /* Ensure images scale without distorting */
+  }
+  
+  /* Assign different animations to each image */
+  .bg-img1 { top: 5%; left: 2%; animation: floatMove1 25s ease-in-out infinite; animation-delay: 0s; }
+  .bg-img2 { top: 25%; right: 5%; animation: floatMove2 25s ease-in-out infinite; animation-delay: 2s; }
+  .bg-img3 { top: 55%; left: 10%; animation: floatMove3 25s ease-in-out infinite; animation-delay: 4s; }
+  .bg-img4 { top: 15%; left: 45%; animation: floatMove1 25s ease-in-out infinite; animation-delay: 1s; }
+  .bg-img5 { bottom: 15%; right: 8%; animation: floatMove2 25s ease-in-out infinite; animation-delay: 3s; }
+  .bg-img6 { bottom: 25%; left: 15%; animation: floatMove3 25s ease-in-out infinite; animation-delay: 5s; }
+  .bg-img7 { top: 8%; right: 35%; animation: floatMove1 25s ease-in-out infinite; animation-delay: 2.5s; }
+  .bg-img8 { bottom: 30%; right: 35%; animation: floatMove2 25s ease-in-out infinite; animation-delay: 4.5s; }
+  .bg-img9 { bottom: 8%; left: 35%; animation: floatMove3 25s ease-in-out infinite; animation-delay: 6s; }
+  .bg-img10 { top: 50%; right: 2%; animation: floatMove1 25s ease-in-out infinite; animation-delay: 7s; }
+  .bg-img11 { top: 40%; left: 80%; animation: floatMove2 25s ease-in-out infinite; animation-delay: 3.5s; }
+  .bg-img12 { top: 70%; right: 20%; animation: floatMove3 25s ease-in-out infinite; animation-delay: 5.5s; }
+  .bg-img13 { top: 20%; right: 20%; animation: floatMove1 25s ease-in-out infinite; animation-delay: 1.5s; }
+  .bg-img14 { bottom: 40%; left: 5%; animation: floatMove2 25s ease-in-out infinite; animation-delay: 6.5s; }
+  .bg-img15 { top: 65%; left: 50%; animation: floatMove3 25s ease-in-out infinite; animation-delay: 4s; }
+  .bg-img16 { bottom: 10%; left: 70%; animation: floatMove1 25s ease-in-out infinite; animation-delay: 2s; }
+  .bg-img17 { bottom: 30%; right: 10%; animation: floatMove2 25s ease-in-out infinite; animation-delay: 8s; }
+  
+  /* Keyframes for three different float animations */
+  @keyframes floatMove1 {
+      0% { opacity: 0.1; transform: translate(0, 0) scale(0.9) rotate(0deg); }
+      25% { opacity: 0.2; transform: translate(10px, -10px) scale(1) rotate(5deg); }
+      50% { opacity: 0.25; transform: translate(20px, -20px) scale(0.9) rotate(0deg); }
+      75% { opacity: 0.2; transform: translate(10px, -10px) scale(1) rotate(-5deg); }
+      100% { opacity: 0.1; transform: translate(0, 0) scale(0.9) rotate(0deg); }
+  }
+  
+  @keyframes floatMove2 {
+      0% { opacity: 0.1; transform: translate(0, 0) scale(0.9) rotate(0deg); }
+      25% { opacity: 0.2; transform: translate(-10px, 10px) scale(1) rotate(-5deg); }
+      50% { opacity: 0.25; transform: translate(-20px, 20px) scale(0.9) rotate(0deg); }
+      75% { opacity: 0.2; transform: translate(-10px, 10px) scale(1) rotate(5deg); }
+      100% { opacity: 0.1; transform: translate(0, 0) scale(0.9) rotate(0deg); }
+  }
+  
+  @keyframes floatMove3 {
+      0% { opacity: 0.1; transform: translate(0, 0) scale(0.9) rotate(0deg); }
+      25% { opacity: 0.2; transform: translate(15px, 5px) scale(1) rotate(10deg); }
+      50% { opacity: 0.25; transform: translate(0, 10px) scale(0.9) rotate(0deg); }
+      75% { opacity: 0.2; transform: translate(-15px, -5px) scale(1) rotate(-10deg); }
+      100% { opacity: 0.1; transform: translate(0, 0) scale(0.9) rotate(0deg); }
+  }
+  
+/* Header */
+header {
+    background-color: var(--primary-bg-color);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    font-size: 28px;
+    color: var(--highlight-color);
+    margin-right: 20px;
+}
+nav {
+    display: flex;
+}
+nav a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    transition: all var(--transition-speed);
+}
+nav a:hover {
+    font-weight: bold;
+}
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--highlight-color);
+    transition: width var(--transition-speed);
+}
+nav a:hover::before {
+    width: 100%;
+}
+
+/* Modern Toggle Switch (Pill Shaped) */
+.toggle-container button {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color var(--transition-speed);
+}
+.toggle-container button::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: left var(--transition-speed);
+}
+body.dark .toggle-container button {
+    background-color: var(--accent-color);
+}
+body.dark .toggle-container button::after {
+    left: 32px;
+}
+
+/* Intro Section */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.intro-text {
+    width: 60%; /* Adjusting width to allow more space for text */
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px; /* Limit the width to improve readability */
+}
+
+.intro-text h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--highlight-color);
+}
+
+.intro-text p {
+    font-size: 18px;
+    color: var(--primary-text-color);
+}
+
+/* Intro Section Image */
+.intro-image {
+    width: 200px; /* Adjust image size */
+    height: 200px; /* Adjust image size */
+    background-color: var(--secondary-bg-color);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Initial shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
+  }
+  
+  .intro-image:hover {
+    box-shadow: 0 0 20px 5px var(--highlight-color); /* Purple glow effect on hover */
+  }
+  
+  .intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .intro-image:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }  
+
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid var(--accent-color);
+    border-radius: 25px;
+    transition: all var(--transition-speed);
+}
+
+.cta:hover {
+    color: #fff;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Minimal Let's Connect Section */
+.find-me {
+    background-color: #fff;
+    border: 1px solid var(--highlight-color);
+    border-radius: 8px;
+    padding: 30px 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+}
+.find-me h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--highlight-color);
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.socials a {
+    color: var(--highlight-color);
+    font-size: 40px;
+    transition: transform 0.3s ease;
+}
+.socials a:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 40px;
+}
+.skills h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--highlight-color);
+    text-align: center;
+}
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 0 20px;
+}
+.skill {
+    background-color: var(--secondary-bg-color);
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract shapes inside the skill circle */
+.skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"%3E%3Ccircle cx="40" cy="80" r="8" fill="rgba(169,169,169,0.2)" /%3E%3Ccircle cx="120" cy="50" r="12" fill="rgba(169,169,169,0.25)" /%3E%3Ccircle cx="200" cy="130" r="10" fill="rgba(169,169,169,0.3)" /%3E%3Ccircle cx="80" cy="200" r="6" fill="rgba(169,169,169,0.15)" /%3E%3Ccircle cx="250" cy="150" r="15" fill="rgba(169,169,169,0.3)" /%3E%3Ccircle cx="300" cy="250" r="9" fill="rgba(169,169,169,0.1)" /%3E%3Ccircle cx="150" cy="280" r="7" fill="rgba(169,169,169,0.2)" /%3E%3Ccircle cx="60" cy="60" r="10" fill="rgba(169,169,169,0.15)" /%3E%3Ccircle cx="250" cy="90" r="8" fill="rgba(169,169,169,0.3)" /%3E%3Ccircle cx="180" cy="180" r="5" fill="rgba(169,169,169,0.2)" /%3E%3Ccircle cx="120" cy="300" r="11" fill="rgba(169,169,169,0.3)" /%3E%3C/svg%3E');
+    background-size: 300px 300px; /* Spread shapes over the card */
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1; /* Positioning the background behind the content */
+    pointer-events: none; /* Ensures the background doesn't block interaction */
+}
+
+/* Hover effect */
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill i {
+    font-size: 36px;
+    color: var(--highlight-color);
+    transition: color var(--transition-speed);
+}
+
+.skill:hover i {
+    color: var(--accent-color);
+}
+
+/* Image rise effect from the bottom */
+.skill img {
+    width: 70%; /* Adjusted size to be smaller */
+    height: 70%; /* Adjusted size to be smaller */
+    object-fit: contain;
+    position: absolute;
+    bottom: -30%; /* Initially, hide the image by half */
+    transition: transform 0.3s ease;
+}
+
+.skill:hover img {
+    transform: translateY(50%); /* Move the image up when hovered */
+}
+
+.skill-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--highlight-color);
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-bg-color);
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+footer p {
+    color: var(--primary-text-color);
+}
+
+/* Dark Mode */
+body.dark {
+    background-color: #a8a8a8;
+    color: #333;
+}
+body.dark header {
+    background-color: #2e0038;
+}
+body.dark footer {
+    background-color: #2e0038;
+}
+body.dark footer p {
+    color: #fff;
+}
+body.dark nav a {
+    color: #fff;
+}
+body.dark nav a:hover::before {
+    background-color: #fff;
+}
+body.dark .skills-list .skill i {
+    color: #fff;
+}
+body.dark .skills-list .skill:hover i {
+    color: var(--accent-color);
+}
+body.dark .social-icons a {
+    color: #fff;
+}
+body.dark .social-icons a:hover {
+    color: var(--accent-color);
+}
+
+/* Transitions */
+a, button {
+    transition: color var(--transition-speed), background-color var(--transition-speed);
+}
+button:hover {
+    color: #fff;
+    background-color: var(--highlight-color);
+}
+
+/* New Find Me Section */
+.connect-section {
+    background: rgba(255, 255, 255, 0.7); /* Light background */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(60, 0, 97, 0.1); /* Light border by default */
+    padding: 20px; /* Adjusted padding for a more compact card */
+    max-width: 400px; /* Thinner width for the card */
+    margin: 40px auto;
+    text-align: center;
+    position: relative; /* Positioning context for background shapes */
+    height: 150px; /* Set height of the card to 150px */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    
+    /* Removing rounded corners */
+    border-radius: 0; /* Square edges */
+    
+    /* Adding shadow around the card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Light shadow around the card */
+  }
+  
+  /* Adding abstract scattered shapes in the background */
+  .connect-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"%3E%3Ccircle cx="40" cy="80" r="8" fill="rgba(169,169,169,0.2)" /%3E%3Ccircle cx="120" cy="50" r="12" fill="rgba(169,169,169,0.25)" /%3E%3Ccircle cx="200" cy="130" r="10" fill="rgba(169,169,169,0.3)" /%3E%3Ccircle cx="80" cy="200" r="6" fill="rgba(169,169,169,0.15)" /%3E%3Ccircle cx="250" cy="150" r="15" fill="rgba(169,169,169,0.3)" /%3E%3Ccircle cx="300" cy="250" r="9" fill="rgba(169,169,169,0.1)" /%3E%3Ccircle cx="150" cy="280" r="7" fill="rgba(169,169,169,0.2)" /%3E%3Ccircle cx="60" cy="60" r="10" fill="rgba(169,169,169,0.15)" /%3E%3Ccircle cx="250" cy="90" r="8" fill="rgba(169,169,169,0.3)" /%3E%3Ccircle cx="180" cy="180" r="5" fill="rgba(169,169,169,0.2)" /%3E%3Ccircle cx="120" cy="300" r="11" fill="rgba(169,169,169,0.3)" /%3E%3C/svg%3E');
+    background-size: 300px 300px; /* Spread shapes over the card */
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1; /* Positioning the background behind the content */
+    pointer-events: none; /* Ensures the background doesn't block interaction */
+  }
+  
+  .connect-section:hover {
+    box-shadow: 0 0 20px rgba(60, 0, 97, 0.5); /* Subtle purple glow on hover */
+    border-color: var(--highlight-color); /* Purple glow on hover */
+  }
+  
+  /* Title for Find Me section */
+  .connect-section h2 {
+    margin-bottom: 10px; /* Adjusted margin to fit the smaller card */
+    font-size: 24px; /* Adjusted font size for the smaller card */
+    color: var(--highlight-color);
+  }
+  
+  /* Change the background and border color in dark mode */
+  body.dark .connect-section {
+    background: rgba(169, 169, 169, 0.9); /* Dark gray background */
+    border: 1px solid rgba(60, 0, 97, 0.6); /* Darker purple border */
+  }
+  
+  body.dark .connect-section h2 {
+    color: #fff; /* White text in dark mode */
+  }
+  
+  .connect-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust gap to fit the smaller card */
+  }
+  
+.connect-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Increased size of the icon container */
+  height: 60px; /* Increased size of the icon container */
+  background: transparent; /* Transparent background */
+  border: 2px solid rgba(60, 0, 97, 0.1); /* Transparent border with very subtle initial color */
+  border-radius: 50%; /* Round shape */
+  font-size: 30px; /* Increased font size for larger icons */
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Border glow on hover */
+}
+
+.connect-icons a:hover {
+  transform: translateY(-8px) scale(1.1);
+  border-color: var(--highlight-color); /* Light purple border glow on hover */
+}
+
+.social-icon {
+  width: 40px; /* Increased icon size */
+  height: 40px; /* Increased icon size */
+  object-fit: contain; /* Ensure image doesn't stretch */
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.bio {
+    text-align: center;
+    padding: 20px;  /* Add padding to give space around the text */
+    max-width: 800px; /* Optional: Set a maximum width for readability */
+    margin: 0 auto;  /* Center the bio content */
+}
