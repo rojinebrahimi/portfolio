@@ -298,10 +298,11 @@ body.dark .toggle-container button::after {
 }
 .skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Ensures items fit in rows */
     gap: 30px;
     justify-items: center;
     padding: 0 20px;
+    grid-auto-rows: 140px; /* Ensure all grid items stay within the defined row height */
 }
 .skill {
     background-color: var(--secondary-bg-color);
