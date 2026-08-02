@@ -2,6 +2,7 @@
 const toggleDarkMode = () => {
     const body = document.body;
     body.classList.toggle('dark');
+    document.getElementById('dark-mode-toggle').setAttribute('aria-pressed', body.classList.contains('dark'));
     
     // Optionally, store the preference in localStorage
     if (body.classList.contains('dark')) {
@@ -14,6 +15,6 @@ const toggleDarkMode = () => {
 // Check localStorage for dark mode preference on load
 if (localStorage.getItem('dark-mode') === 'enabled') {
     document.body.classList.add('dark');
-} else {
-    document.body.classList.remove('dark');
 }
+
+document.getElementById('dark-mode-toggle').setAttribute('aria-pressed', document.body.classList.contains('dark'));

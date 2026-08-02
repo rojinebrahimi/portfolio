@@ -12,18 +12,18 @@ type PageData struct {
 }
 
 func renderTemplate(w http.ResponseWriter, templateName string, data PageData) {
-    tpl, err := template.ParseFiles("templates/base.html", "templates/"+templateName)
-    if err != nil {
-        http.Error(w, "Error loading template: "+err.Error(), http.StatusInternalServerError)
-        log.Println("Error loading template:", err)  // Log the actual error
-        return
-    }
+	tpl, err := template.ParseFiles("templates/base.html", "templates/"+templateName)
+	if err != nil {
+		http.Error(w, "Error loading template: "+err.Error(), http.StatusInternalServerError)
+		log.Println("Error loading template:", err) // Log the actual error
+		return
+	}
 
-    err = tpl.ExecuteTemplate(w, "base", data)
-    if err != nil {
-        http.Error(w, "Error rendering template: "+err.Error(), http.StatusInternalServerError)
-        log.Println("Error rendering template:", err)  // Log the actual error
-    }
+	err = tpl.ExecuteTemplate(w, "base", data)
+	if err != nil {
+		http.Error(w, "Error rendering template: "+err.Error(), http.StatusInternalServerError)
+		log.Println("Error rendering template:", err) // Log the actual error
+	}
 }
 
 func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
