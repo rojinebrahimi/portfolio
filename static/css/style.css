@@ -28,7 +28,7 @@ body::before { opacity:1; background:
   radial-gradient(ellipse at 20% 0%,rgba(110,70,200,.25),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(30,120,180,.18),transparent 50%);
   background-size:340px 340px,260px 260px,420px 420px,300px 300px,380px 380px,320px 320px,280px 280px,400px 400px,auto,auto; animation:twinkle 6s ease-in-out infinite alternate; }
 body::after { width:38vw;height:38vw; right:-10vw;top:-12vw; background:radial-gradient(circle at 35% 35%,rgba(183,156,255,.35),rgba(80,40,160,.18) 45%,transparent 70%); }
-.brand::before { content:'🛰 '; } .eyebrow::before { content:'✦ '; }
+.brand::before { content:''; } .brand .logo { font-size:0; } .brand .logo::after { content:none; } .brand .logo svg { display:block; filter:drop-shadow(0 0 4px var(--lime)); } .eyebrow::before { content:'✦ '; }
 .hero h1 em::before { content:'🚀 '; font-size:.6em; } .hero h1 em::after { content:''; }
 body.dark::before { opacity:.25; }
 @keyframes twinkle { from { opacity:.65; } to { opacity:1; } }
